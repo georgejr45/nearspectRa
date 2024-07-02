@@ -2,7 +2,7 @@ Package: nearspectRa
 Title: What the Package Does (One Line, Title Case)
 Version: 0.0.0.9000
 Authors@R: 
-    person("Methun", "George", , "methungeorge333@gmail.com", role = c("aut", "cre"),
+    person("Steffen", "Neumann", "Methun", "George" , "methungeorge333@gmail.com", role = c("aut", "cre"),
            comment = c(ORCID = "YOUR-ORCID-ID"))
 Description: importing, processing and ploting of NIRS data.
 License: MIT + file LICENSE
