@@ -4,7 +4,7 @@ Version: 0.0.0.9000
 Authors@R: 
     person("Steffen", "Neumann", "Methun", "George" , "methungeorge333@gmail.com", role = c("aut", "cre"),
            comment = c(ORCID = "YOUR-ORCID-ID"))
-Description: importing, processing and ploting of NIRS data.
+Description: importing, processing and ploting of NIRS data files.
 License: MIT + file LICENSE
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
