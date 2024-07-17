@@ -32,7 +32,7 @@
 ##'
 ##'@export
 ##'
-##'@author Methun George
+##'@author Methun George, Steffen Neumann
 ##'
 
 read.sig <- function(file_path) {
