@@ -1,5 +1,5 @@
 #function to read the .sig files
-read_sig <- function(file.path) {
+read.sig <- function(file.path) {
   if(!file.exists(file_path)) {
     stop("file does not exist: ", file_path)
   }
@@ -19,6 +19,6 @@ read_sig <- function(file.path) {
 
 #example data
 file_path <- "/Users/methungeorge/Desktop/IPB/playground/LILY_LEAF_i2145[86].sig"
-data <- read_sig(file_path)
+data <- read.sig(file_path)
 print(head(data))
 
