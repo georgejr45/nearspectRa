@@ -1,10 +1,11 @@
 library(testthat)
 
+
 # Source the file containing the read_sig function
 #source("https://github.com/georgejr45/nearspectRa/blob/main/R/read.sig.R")
 source("/Users/methungeorge/Desktop/nearspectRa/R/read.sig.R")
 
-test_that("read_sig function works correctly", {
+test_that("read.sig function works correctly", {
   # Test with a non-existent file
   expect_error(read.sig("non_existent_file.sig"), "file does not exist")
 

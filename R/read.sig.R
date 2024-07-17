@@ -18,7 +18,7 @@ read.sig <- function(file.path) {
 }
 
 #example data
-file_path <- "/Users/methungeorge/Desktop/IPB/playground/LILY_LEAF_i2145[86].sig"
-data <- read.sig(file_path)
-print(head(data))
+# file_path <- "/Users/methungeorge/Desktop/IPB/playground/LILY_LEAF_i2145[86].sig"
+# data <- read.sig(file_path)
+# print(head(data))
 
