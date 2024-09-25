@@ -3,7 +3,7 @@
 #' This function reads .sig files from a specified directory or a file path, extracts wavelength and reflectance data,
 #' and combines them into a \code{SummarizedExperiment} object. Each .sig file is expected to contain reflectance data
 #' and a sample name in its content.
-#' 
+#'
 #' @name read_sig_summar
 #' @title Read the SIG files and return as SummarizedExperiment object.
 #'
@@ -31,8 +31,8 @@
 #' print(se)
 #'
 #' @import SummarizedExperiment
-#' @author Methun George, Steffen Neumann
-#' 
+#' @author Methun George, Dr.Steffen Neumann
+#'
 #' @export
 
 library(SummarizedExperiment)
@@ -46,55 +46,55 @@ read_sig_to_se <- function(path) {
   } else {
     sig_files <- path
   }
-  
+
   # Create an empty list to store data frames and sample names
   all_data <- list()
   sample_names <- c()
-  
+
   # Read each file and extract data
   for (file in sig_files) {
     file_content <- readLines(file)
-    
+
     # Extract sample name
     name_line <- grep("^name=", file_content, value = TRUE)
     if (length(name_line) > 0) {
       sample_name <- sub("^name=", "", name_line)
     } else {
-      sample_name <- basename(file) 
+      sample_name <- basename(file)
     }
     sample_names <- c(sample_names, sample_name)
-    
+
     # Extract data (reflectance %)
     data_start <- grep("^data=", file_content)
     data_lines <- file_content[(data_start + 1):length(file_content)]
     data <- read.table(text = data_lines, header = FALSE, fill = TRUE)
-    
+
     # Select columns for wavelengths and reflectance
     data <- data[, c(1, 4)]
     colnames(data) <- c("Wavelengths(nm)", sample_name)
-    
+
     # Add the data frame to the list
     all_data[[sample_name]] <- data
   }
-  
+
   # Combine all data frames by wavelengths
   combined_data <- Reduce(function(x, y) merge(x, y, by = "Wavelengths(nm)", all = TRUE), all_data)
-  
+
   # Set row names to wavelengths and remove the "Wavelengths(nm)" column
   rownames(combined_data) <- combined_data$`Wavelengths(nm)`
-  combined_data <- combined_data[, -1, drop = FALSE]  
-  
+  combined_data <- combined_data[, -1, drop = FALSE]
+
   # Create colData
   colData <- DataFrame(sampleNames = colnames(combined_data))
-  
+
   # Create rowData
   rowData <- DataFrame(Wavelengths = rownames(combined_data))
-  
+
   # Create the SummarizedExperiment object
   se <- SummarizedExperiment(assays = list(counts = as.matrix(combined_data)),
                              colData = colData,
                              rowData = rowData)
-  
+
   return(se)
 }
 
