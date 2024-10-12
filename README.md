@@ -5,11 +5,11 @@
 [![R-CMD-check](https://github.com/georgejr45/project-X/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/georgejr45/project-X/actions/workflows/R-CMD-check.yaml)
 <!-- badges: end -->
 
-The goal of nearspectRa is to import, process and plot NIRS data.
+The goal of nearspectRa is to import, process and plot NIRS data ( Package is not ready yet ).
 
 ## Installation
 
-You can install the development version of nearspectRa like so:
+This package is expected to publish by early 2025:
 
 ``` r
 remote::install_github("georgejr45/nearspectRa")
