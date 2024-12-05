@@ -4,7 +4,7 @@
 #' and associated metadata, combines them into a "SummarizedExperiment" object. This object
 #' contains the spectral data as an assay matrix and metadata about the samples and wavelengths.
 #'
-#' @name read_asd_summar
+#' @name read_summarizedexperiment_asd
 #' @title Read the ASD files and return as SummarizedExperiment object.
 #'
 #' @param path A character string specifying the path to a directory containing the ".asd" files or a single
@@ -43,7 +43,7 @@ library(FieldSpectra)
 library(SummarizedExperiment)
 
 
-  read_asd_summar <- function(path) {
+  read_summarizedexperiment_asd <- function(path) {
     if (length(path) == 1 && file.info(path)$isdir) {
       asd_files <- list.files(path = path, pattern = "\\.asd$", full.names = TRUE)
     } else {
@@ -103,7 +103,7 @@ library(SummarizedExperiment)
 
 # Example
 # path <- "/Users/methungeorge/Desktop/IPB/test/data"
-# se <- read_asd_summar(path)
+# se <- read_summarizedexperiment_asd(path)
 # se
 #
 # # # Check the SummarizedExperiment object
