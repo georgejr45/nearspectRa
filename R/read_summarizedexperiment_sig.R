@@ -4,7 +4,7 @@
 #' and combines them into a \code{SummarizedExperiment} object. Each .sig file is expected to contain reflectance data
 #' and a sample name in its content.
 #'
-#' @name read_sig_summar
+#' @name read_summarizedexperiment_sig
 #' @title Read the SIG files and return as SummarizedExperiment object.
 #'
 #' @param path A character vector of file paths or a directory path. If a directory path is provided, all .sig files
@@ -27,7 +27,7 @@
 #' @examples
 #' # Example usage:
 #' path <- "/path/to/sig/files"
-#' se <- read_sig_to_se(path)
+#' se <- read_summarizedexperiment_asd(path)
 #' print(se)
 #'
 #' @import SummarizedExperiment
@@ -38,7 +38,7 @@
 library(SummarizedExperiment)
 
 # Define the function
-read_sig_to_se <- function(path) {
+read_summarizedexperiment_sig <- function(path) {
   # Check if the input path is a directory or a single file
   path_info <- file.info(path)
   if (path_info$isdir) {
@@ -100,7 +100,7 @@ read_sig_to_se <- function(path) {
 
 # Example usage
 path <- "/Users/methungeorge/Desktop/IPB/test/sig_data"
-se <- read_sig_to_se(path)
+se <- read_summarizedexperiment_sig(path)
 
 # Check the SummarizedExperiment object
 print(se)
