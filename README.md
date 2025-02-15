@@ -1,8 +1,7 @@
 
 # nearspectRa
+![Logo](nearspectRa.PNG)
 <img src="nearspectRa.png" width="200" height="100" />
-
-
 
 <!-- badges: start -->
 [![R-CMD-check](https://github.com/georgejr45/project-X/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/georgejr45/project-X/actions/workflows/R-CMD-check.yaml)
