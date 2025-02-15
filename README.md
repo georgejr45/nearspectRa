@@ -1,6 +1,7 @@
 
 # nearspectRa
-![Logo](nearspectRa.PNG)
+<img src="nearspectRa.png" width="200" height="100" />
+
 
 
 <!-- badges: start -->
