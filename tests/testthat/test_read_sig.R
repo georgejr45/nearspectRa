@@ -26,7 +26,7 @@ setup_test_sig_data <- function() {
   return(test_dir)
 }
 
-# 2️⃣ Unit Tests
+#  Unit Tests
 test_that("Function returns a SummarizedExperiment object", {
   test_dir <- setup_test_sig_data()
   result <- read_summarizedexperiment_sig(test_dir)

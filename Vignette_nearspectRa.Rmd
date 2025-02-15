@@ -1,0 +1,113 @@
+---
+title: "nearspectRa"
+author: "Methun George & Dr. Steffen Neumann"
+date: "2025-02-14"
+output: 
+  html_document :
+    theme: cerulean
+    toc: true
+    toc_float: true
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+This vignette serves as a user guide for 'nearspectRa,' demonstrating the package's functions with code examples and expected outputs.
+
+# SummarizedExperiment for ".asd" files
+
+```{r}
+# Function name : read_summarizedexperiment.asd
+
+# Read ASD Spectral Files and Create a SummarizedExperiment Object
+
+source("/Users/methungeorge/Desktop/nearspectRa/R/read_summarizedexperiment_asd.R")
+
+# Example Usage 
+
+# Define the path to your asd file or directory containing the files
+path <- "/Users/methungeorge/Desktop/IPB/test/data"
+
+# Save the output of function 
+se_asd <- read_summarizedexperiment_asd(path)
+
+# To see the output
+print(se_asd)
+```
+
+The features used in this analysis are the wavelengths of the NIRS spectra.  Metadata associated with each wavelength is stored in the row names, and sample data are represented in the columns.  A summary of the SummarizedExperiment dimensions is provided at the top.
+
+
+```{r}
+# To access the column names of the SummarizedExperiment
+colnames(se_asd)
+```
+
+
+```{r}
+# To access the row names of the SummarizedExperiment
+head(rownames(se_asd))
+```
+
+
+```{r}
+# To access the assay data
+assay_data <- assay(se_asd, "counts")
+head(assay_data)
+
+```
+
+# SummarizedExperiment for ".sig" files
+
+```{r}
+# Function name : read_summarizedexperiment.sig
+
+# Read sig Spectral Files and Create a SummarizedExperiment Object
+
+source("/Users/methungeorge/Desktop/nearspectRa/R/read_summarizedexperiment_sig.R")
+path <- "/Users/methungeorge/Desktop/IPB/test/sig_data"
+se_sig <- read_summarizedexperiment_sig(path)
+
+# To see the output 
+print(se_sig)
+```
+
+
+```{r}
+# To access the column names of the SummarizedExperiment
+colnames(se_sig)
+```
+
+```{r}
+# To access the row names of the SummarizedExperiment
+head(rownames(se_sig))
+```
+
+```{r}
+# To access the assay data
+assay_data_sig <- assay(se_sig, "counts")
+head(assay_data_sig)
+```
+
+
+# Visualization
+
+```{r}
+library(ComplexHeatmap)
+
+Heatmap(
+  assay(se_asd, "counts"),
+  name = "Reflectance",
+  column_names_gp = gpar(fontsize = 10),
+  row_names_gp = gpar(fontsize = 8)
+)
+
+
+
+```
+
+
+
+
+

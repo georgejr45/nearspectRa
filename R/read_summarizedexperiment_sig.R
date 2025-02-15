@@ -99,9 +99,9 @@ read_summarizedexperiment_sig <- function(path) {
 }
 
 # Example usage
-path <- "/Users/methungeorge/Desktop/IPB/test/sig_data"
-se <- read_summarizedexperiment_sig(path)
+# path <- "/Users/methungeorge/Desktop/IPB/test/sig_data"
+# se <- read_summarizedexperiment_sig(path)
 
 # Check the SummarizedExperiment object
-print(se)
+# print(se)
 # View(assay(se, "counts"))
