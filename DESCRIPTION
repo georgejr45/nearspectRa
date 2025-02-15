@@ -1,15 +1,8 @@
 Package: nearspectRa
-Title: Make SummarizedExperiment object from spectral data
-Version: 0.0.0.9000
-Authors@R: 
-    person("Methun", "George", email = "methungeorge333@gmail.com", role = "aut" )
-    person("Steffen", "Neumann", email = "sneuman@ipb-halle.de", role = c("aut")
-    
-Description:  processing of NIRS data files.
+Type: Package
+Title: What the Package Does (One Line, Title Case)
+Version: 0.1.0
+Authors@R: person("Methun", "George", email = "methungeorge333@gmail.com", role = c("aut", "cre"))
+Description: Importing, processing, and plotting NIRS data files.
 License: MIT + file LICENSE
-Encoding: UTF-8
-Roxygen: list(markdown = TRUE)
-RoxygenNote: 7.3.2
-Suggests: 
-    testthat (>= 3.0.0)
-Config/testthat/edition: 3
+URL: https://github.com/georgejr45/nearspectRa

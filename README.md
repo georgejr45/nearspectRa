@@ -13,7 +13,7 @@ The goal of nearspectRa is to import, process and plot NIRS data ( Package is no
 This package is expected to publish by early 2025:
 
 ``` r
-remote::install_github("georgejr45/nearspectRa")
+remotes::install_github("georgejr45/nearspectRa")
 ```
 
 ## Example
